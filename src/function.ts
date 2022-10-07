@@ -121,9 +121,9 @@ export const getRing = <A, B>(R: Ring<B>): Ring<(a: A) => B> => {
  * @since 2.11.0
  */
 export const apply =
-  <A>(a: A) =>
-  <B>(f: (a: A) => B): B =>
-    f(a)
+  <A extends Array<unknown>>(...a: A) =>
+  <B>(f: (...a: A) => B): B =>
+    f(...a)
 
 /**
  * A *thunk*

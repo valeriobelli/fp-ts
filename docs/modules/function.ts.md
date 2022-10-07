@@ -208,7 +208,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const apply: <A>(a: A) => <B>(f: (a: A) => B) => B
+export declare const apply: <A extends unknown[]>(...a: A) => <B>(f: (...a: A) => B) => B
 ```
 
 Added in v2.11.0

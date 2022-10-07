@@ -4,6 +4,7 @@ import * as B from '../src/boolean'
 import * as RA from '../src/ReadonlyArray'
 import { concatAll } from '../src/Monoid'
 import * as N from '../src/number'
+import * as Ord from '../src/Ord'
 import * as U from './util'
 
 const f = (n: number) => n + 1
@@ -187,5 +188,6 @@ describe('function', () => {
 
   it('apply', () => {
     U.deepStrictEqual(_.pipe(U.double, _.apply(1)), 2)
+    U.deepStrictEqual(_.pipe(Ord.clamp(N.Ord), _.apply(2, 1), _.apply(10)), 2)
   })
 })
